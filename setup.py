@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 import os
 from glob import glob
 
-package_name = "zed_nav"
+package_name = "IGVC_2025"
 
 setup(
     name=package_name,

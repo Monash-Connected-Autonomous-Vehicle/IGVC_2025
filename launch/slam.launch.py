@@ -4,7 +4,7 @@ from launch_ros.actions import Node
 from ament_index_python.packages import get_package_share_directory
 
 def generate_launch_description():
-    pkg_dir = get_package_share_directory('zed_nav')
+    pkg_dir = get_package_share_directory('IGVC_2025')
     
     return LaunchDescription([
         # Convert Velodyne pointcloud to laserscan
