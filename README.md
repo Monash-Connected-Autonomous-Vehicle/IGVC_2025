@@ -23,11 +23,24 @@ sudo apt install ros-humble-slam-toolbox ros-humble-pointcloud-to-laserscan ros-
 
 #### How to start the code
 ```
-# Launch Camera
-ros2 launch zed_wrapper zed_camera.launch.py camera_model:=zed2i
+# In a separate terminal:
 
-# Launch Node
-ros2 run zed_nav camera_commander
+# Launch Camera
+ros2 launch zed_wrapper zed_camera.launch.py camera_model:=zed2i \
+  --ros-args -r /zed/zed_node/odom:=/odom
+
+
+# Launch Lidar Driver
+ros2 launch velodyne_driver velodyne_driver_node-VLP16-launch.py
+
+# Launch Lidar
+ros2 launch velodyne_pointcloud velodyne_transform_node-VLP16-launch.py
+
+# Launch Filter
+ros2 run voxel_filter voxel_filter_node
+
+# Launch Robot Bring up
+ros2 launch IGVC_2025 robot_bringup.launch.py
 ```
 #### Subscribe to Command
 - If you echo /nav_command topic it will (hopefully) tell the robot what to do. If you have any questions about Zed Camera Ask Matt. 

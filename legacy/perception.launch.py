@@ -46,7 +46,7 @@ def generate_launch_description():
             executable='velodyne_driver_node',
             name='velodyne_driver_node',
             parameters=[{
-                'device_ip': '192.168.10.201',  # UA default, override with launch argument
+                'device_ip': '192.168.1.201',  # UA default, override with launch argument
                 'gps_time': False,
                 'time_offset': 0.0,
                 'enabled': True,
@@ -56,7 +56,7 @@ def generate_launch_description():
                 'frame_id': 'velodyne',
                 'model': 'VLP16',
                 'rpm': 600.0,
-                'port': 2368,  # UA default, override with launch argument
+                'port': 2369,  # UA default, override with launch argument
                 'timestamp_first_packet': False,
                 'cut_angle': -0.01  # Keeping your original additional parameter
             }],

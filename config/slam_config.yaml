@@ -14,5 +14,4 @@ slam_toolbox_node:
     minimum_time_interval: 0.5  # Time between scans
     transform_timeout: 0.0
     scan_topic: "/scan_filtered"  # Output from pointcloud_to_laserscan
-    odom_topic: "/zed/zed_node/odom"
-    scan_qos: "reliable"
+    scan_qos: "Best Effort"

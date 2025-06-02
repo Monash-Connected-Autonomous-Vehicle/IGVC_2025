@@ -14,7 +14,7 @@ def generate_launch_description():
             name='pointcloud_to_laserscan',
             parameters=[os.path.join(pkg_dir, 'config', 'pointcloud_to_laserscan.yaml')],
             remappings=[
-                ('/cloud_in', '/velodyne_voxel_filtered'),
+                ('/cloud_in', '/velodyne_points'),
                 ('/scan', '/scan_filtered')
             ]
         ),
