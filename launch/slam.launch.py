@@ -4,7 +4,7 @@ from launch_ros.actions import Node
 from ament_index_python.packages import get_package_share_directory
 
 def generate_launch_description():
-    pkg_dir = get_package_share_directory('zed_nav')
+    pkg_dir = get_package_share_directory('IGVC_2025')
     
     return LaunchDescription([
         # Convert Velodyne pointcloud to laserscan
@@ -14,7 +14,7 @@ def generate_launch_description():
             name='pointcloud_to_laserscan',
             parameters=[os.path.join(pkg_dir, 'config', 'pointcloud_to_laserscan.yaml')],
             remappings=[
-                ('/cloud_in', '/velodyne_voxel_filtered'),
+                ('/cloud_in', '/velodyne_points'),
                 ('/scan', '/scan_filtered')
             ]
         ),
